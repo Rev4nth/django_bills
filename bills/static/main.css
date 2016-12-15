@@ -1,0 +1,430 @@
+/* main page css*/
+.welcome-content {
+    margin-top: 200px;
+}
+
+.welcome-content h3 {
+    margin-bottom: 30px;
+}
+body{
+  background-color: #f5f5f5;
+}
+/******************************************************************************/
+
+/* nav bar css */
+nav {
+    background-color: white;
+    position: fixed;
+    z-index: 10;
+}
+
+.brand-logo{
+  font-size: 24px;
+  font-weight: 400;
+}
+.nav-wrapper a, .nav-wrapper li {
+    color: #333333;
+}
+
+.nav-wrapper a {
+    margin-left: 30px;
+}
+/******************************************************************************/
+
+/*common css for all*/
+.headline-main {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.headline-sub {
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+.btn{
+  background-color: #85BB65;
+}
+.btn:hover{
+  background-color: #709E55;
+}
+.btn:focus{
+  background-color: #608749;
+}
+.active{
+  color: #85BB65 !important;
+}
+.clearfix{
+  clear:both;
+}
+.helper-info{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0;
+  color: #9b9b9b;
+}
+
+/******************************************************************************/
+
+/* side-nav view css*/
+.collection-item {
+    font-size: 18px;
+    padding: 8px 16px;
+}
+.collection a.collection-item{
+  color: #85BB65;
+}
+#side-nav ul{
+  margin-top: 65px;
+}
+.collection-header .headline-sub{
+  display: inline-block;
+  line-height: 24px;
+}
+.side-nav a{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px !important;
+}
+.side-nav .active {
+  background-color: #E3E3E3 !important;
+  color: rgba(0,0,0,0.87) !important;
+}
+#btn-create{
+  font-size: 12px;
+  display: inline;
+  margin: 0;
+  padding: 5px 10px;
+  line-height: 24px;
+  color: #85bb65;
+  margin-left: 4px;
+}
+#btn-create i{
+    float: none;
+    height: 28px;
+    line-height: inherit;
+    margin: 0;
+    color: #9b9b9b;
+    vertical-align: middle;
+    width: 12px;
+    font-size: 12px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+/******************************************************************************/
+
+/* accounts with charts view css */
+
+.account_charts{
+  padding: 0 30px;
+  padding-top: 84px;
+  }
+.account_each{
+  padding: 20px;
+}
+
+.btn-create_account{
+  color: #85BB65;
+}
+.create_account_modal{
+  margin-bottom: 0;
+}
+.account_each .helper-info{
+  margin-bottom: 0;
+}
+/*******************************************************************************/
+/* Date range picker */
+#reportrange{
+  background-color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  width: 350px;
+  margin-bottom: 8px;
+  float: right;
+  margin-top: 0;
+}
+#reportrange i{
+  font-size: 24px;
+  color: #9b9b9b;
+  vertical-align: bottom;
+}
+.dropdown-menu{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      font-size: 14px;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 4px;
+      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.daterangepicker td,th{
+  padding: 5px !important;
+  font-size: 14px;
+}
+.daterangepicker th{
+  color: #888;
+}
+
+.daterangepicker .daterangepicker_input .input-mini {
+    border: none;
+    border-radius: 0;
+    color: #555;
+    display: block;
+    font-size: 12px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 0 10px 0;
+    padding: 0 6px;
+    width: 74px;
+    margin: auto;
+}
+.daterangepicker .input-mini.active {
+    border: 1px solid #85bb65 !important;
+    border-radius: 0 !important;
+}
+.daterangepicker .ranges li.active {
+    background: #85bb65;
+    border: none;
+    color: #fff !important;
+}
+.daterangepicker .ranges li {
+    font-size: 13px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 0px;
+    color: #85bb65;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #85bb65 !important;
+    border-color: transparent !important;
+    color: #fff !important;
+  }
+  .daterangepicker td.in-range {
+    background: #ebf4f8;
+    border-radius: 0;
+}
+.daterangepicker  .ranges ul{
+    margin-bottom: 30px;
+    margin-top: 24px;
+  }
+  .btn-success{
+    font-size: 14px;
+  }
+  .btn-default{
+    font-size: 14px;
+    box-shadow: none;
+    background-color: transparent;
+    color: #343434;
+  }
+  .daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #85bb65;
+    border-color: transparent;
+    color: #fff;
+    border-radius: 0;
+  }
+.daterangepicker  .ranges li:hover {
+    background: #85bb65;
+    border: none;
+    color: #fff;
+}
+/*******************************************************************************/
+/* account details view css */
+.account_detail_headline{
+  margin:24px 0;
+  margin-bottom: 12px;
+}
+.account_detail_headline h4{
+  margin: 0;
+}
+#bill_date:focus{
+  border-bottom: none;
+  box-shadow:none;
+}
+.account_detail_headline i{
+  font-size: 16px;
+  color: #9b9b9b;
+}
+#account_name{
+  text-transform: capitalize;;
+}
+main{
+  padding-top: 65px;
+  padding-left:300px
+}
+main .container{
+  width:95%;
+}
+.edit-btn i{
+  color: #9b9b9b;
+  font-size: 16px;
+}
+#search_table{
+  background-color: white;
+  padding-top: 20px;
+
+}
+.helper-text{
+  color: #9b9b9b;
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+}
+.search-wrapper{
+  margin: 0 12px;
+  margin-bottom: 24px;
+  transition: margin .25s ease;
+}
+.search-wrapper i{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #fafafa;
+}
+#search_query{
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+  height: 45px;
+  margin: 0;
+  padding: 0 45px 0 15px;
+  border: 0;
+}
+#search_query:focus{
+  outline:none;
+  box-shadow: none;
+}
+.billsgi-table th{
+  color: #888888;
+  font-weight: 400;
+}
+.search_btn{
+  text-align: left;
+  margin-bottom: 18px;
+}
+.search_btn button{
+  background-color: #e0e0e0;
+  color: #9b9b9b;
+  padding: 0 16px;
+}
+.btn-search:focus, .btn-search:hover{
+  color: white;
+  background-color: #85bb65;
+}
+.search_box .headline-sub{
+  margin-top: 0;
+}
+/******************************************************************************/
+
+/* add a bill model view css*/
+.input-field{
+  margin-top: 6px;
+}
+.bill_date{
+  padding: 0 !important;
+}
+[type="checkbox"]+label {
+  padding-left: 26px;
+}
+.add_file_btn{
+  width: 48px;
+  height: 48px !important;
+  border-radius: 50%;
+  padding: 0;
+}
+.bill_tags_all{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.bill_tag{
+  display: inline;
+  padding-right: 8px;
+}
+.modal-content h4{
+  text-align: center;
+  background-color: #768996;
+  padding: 12px;
+  margin: -24px;
+  margin-bottom: 8px;
+  color: white;
+  font-size: 24px;
+}
+/******************************************************************************/
+
+/* edit a bill page*/
+
+#edit_page{
+  padding-top: 84px;
+  width: 50%;
+}
+#edit_page .card{
+  padding: 16px;
+}
+
+#edit_page .card h4{
+  text-align: center;
+  background-color: #dddddd;
+  padding: 12px;
+  margin: -16px;
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #757575;
+}
+#edit_page .btn-update{
+  margin-bottom: 16px;
+}
+#edit_page hr{
+  margin: 10px -16px;
+  border: 1px solid #ddd;
+  width: calc(100% + 32px);
+  margin-top:48px;
+}
+#edit_page .subheader{
+  font-size: 20px;
+  margin-left: 16px;
+  color: #757575;
+}
+
+.filelink{
+  font-size: 16px;
+}
+.uploaded_files p{
+  margin-top: 0;
+  color: #9b9b9b;
+  padding-left: 22px  !important;
+}
+#edit_page .icon-submit{
+  border: none;
+  padding: 0;
+  color: #9b9b9b;
+  background-color: white;
+  font-size: 22px;
+}
+#edit_page .btn-submit{
+  margin-top: 14px;
+}
+.uploaded_files{
+  margin-bottom: 24px;
+}

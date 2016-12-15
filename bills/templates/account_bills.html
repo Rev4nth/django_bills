@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <title>Account Bills</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4>Account: {{ account.account_name }}</h2>
+      <div class="card row section">
+        <div class="col s8 offset-s2">
+          <h5 class="center-align">Add a Bill</h5>
+          <form action="{% url 'bills:account_bills' account.id %}" method="post">
+            {% csrf_token %}
+            <div class="input-field col s12">
+                <input id="bill_name" type="text" name="bill_name">
+                <label for="bill_name" class="active">Bill Title</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="bill_amount" type="text" name="bill_amount">
+                <label for="bill_amount" class="active">Bill Amount</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="bill_date" type="date" name="bill_date">
+                <label for="bill_date" class="active">Bill Date</label>
+            </div>
+            <div class="col s6">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <table class="stripped">
+        <thead>
+          <tr>
+              <th data-field="id">Bill Name</th>
+              <th data-field="name">Bill Amount</th>
+              <th data-field="price">Bill Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for bill in account_bills %}
+          <tr>
+            <td>{{ bill.bill_name }}</td>
+            <td>{{ bill.bill_amount }}</td>
+            <td>{{ bill.bill_date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
