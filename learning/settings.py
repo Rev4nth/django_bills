@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,13 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'bills.apps.BillsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
+    'bills.apps.BillsConfig',
 ]
 
 MIDDLEWARE = [
@@ -63,10 +65,16 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
 ]
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
 
 WSGI_APPLICATION = 'learning.wsgi.application'
 
@@ -100,6 +108,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# oauth2
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '679302979041-c74i7bs32a3tdk1sf8ggpvs7psbd2kkp.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'H3M3aEQdgnyG5_Lo9g9tiuKR'
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+)
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_URL = '/login/'
+LOGIN_URL = '/login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/

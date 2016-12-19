@@ -1,13 +1,7 @@
-<html>
+{% extends "base.html" %}
+{% block title %}{{ account.account_name }} Bills{% endblock %}
 
-<head>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <title>Account Bills</title>
-</head>
-
-<body>
+{% block content %}
     <div class="container">
         <h4>Account: {{ account.account_name }}</h2>
       <div class="card row section">
@@ -53,5 +47,4 @@
         </tbody>
       </table>
     </div>
-  </body>
-</html>
+{% endblock %}
