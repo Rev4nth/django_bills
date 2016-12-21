@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block head %}
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="679302979041-c74i7bs32a3tdk1sf8ggpvs7psbd2kkp.apps.googleusercontent.com"> {% endblock %} {% block title %}Login{% endblock%} {% block content %}
+<div class="container center-align welcome-content">
+
+    <h3>Welcome to Bills.</h3>
+    <a class="waves-effect waves-light btn" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with your Google email</a>
+</div>
+
+{% endblock %}

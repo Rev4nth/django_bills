@@ -2,11 +2,18 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
-
-import pdb
+from django.contrib.auth.decorators import login_required
 
 from .models import Account, Bill
-# Create your views here.
+
+def login(request):
+    # import pdb; pdb.set_trace()
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(reverse('bills:accounts'))
+    else:
+        return render(request,'login.html')
+
+@login_required
 def accounts(request):
     accounts =  Account.objects.all()
     template_values = {
@@ -14,13 +21,17 @@ def accounts(request):
     }
     return render(request, 'accounts.html', template_values)
 
-
+@login_required
 def createAccount(request):
-    new_account = request.POST.get("new_account")
-    create_account = Account(account_name = new_account, created_date= timezone.now())
-    create_account.save()
-    return HttpResponseRedirect(reverse('bills:accounts'))
+    if request.method == 'POST':
+        new_account = request.POST.get("new_account")
+        create_account = Account(account_name = new_account, created_date= timezone.now())
+        create_account.save()
+        return HttpResponseRedirect(reverse('bills:accounts'))
+    else:
+        return HttpResponseRedirect(reverse('bills:account_bills'))
 
+@login_required
 def accountBills(request, account_id):
     if request.method == 'POST':
         account = Account.objects.get(pk=account_id)

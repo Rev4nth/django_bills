@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('bills.urls')),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
+    url(r'', include('bills.urls'), name='bills'),
     url(r'^admin/', admin.site.urls),
 ]
